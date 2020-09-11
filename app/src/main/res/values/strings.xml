@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ControlRemoto</string>
+    <string name="strporton">Porton</string>
+    <string name="strbanda">Banda</string>
+    <string name="strluces">Luces</string>
+    <string name="strtemperatura">Temperatura</string>
+    <string name="strdesconectar">DESCONECTAR</string>
+    <string name="strdispositivos">DISPOSITIVOS ENCONTRADOS</string>
+</resources>

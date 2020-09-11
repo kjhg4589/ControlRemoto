@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/btnPorton"
+        android:layout_width="50dp"
+        android:layout_height="150dp"
+        android:background="#DAE0E7"
+        android:contentDescription="@string/strporton"
+        android:scaleType="fitStart"
+        app:layout_constraintBottom_toTopOf="@+id/btnLuces"
+        app:layout_constraintEnd_toStartOf="@+id/btnBanda"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        app:srcCompat="@drawable/porton" />
+
+    <ImageButton
+        android:id="@+id/btnBanda"
+        android:layout_width="50dp"
+        android:layout_height="150dp"
+        android:background="#DAE0E7"
+        android:contentDescription="@string/strluces"
+        android:scaleType="fitStart"
+        app:layout_constraintBottom_toTopOf="@+id/btnTemperatura"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.814"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        app:srcCompat="@drawable/banda" />
+
+    <ImageButton
+        android:id="@+id/btnTemperatura"
+        android:layout_width="50dp"
+        android:layout_height="150dp"
+        android:background="#DAE0E7"
+        android:contentDescription="@string/strtemperatura"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/btnDesconectar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.814"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.875"
+        app:srcCompat="@drawable/temperatura" />
+
+    <ImageButton
+        android:id="@+id/btnLuces"
+        android:layout_width="50dp"
+        android:layout_height="150dp"
+        android:background="#DAE0E7"
+        android:contentDescription="@string/strluces"
+        android:scaleType="fitStart"
+        app:layout_constraintBottom_toTopOf="@+id/btnDesconectar"
+        app:layout_constraintEnd_toStartOf="@+id/btnTemperatura"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.875"
+        app:srcCompat="@drawable/luces" />
+
+    <Button
+        android:id="@+id/btnDesconectar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:height="100dp"
+        android:text="@string/strdesconectar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
