@@ -6,66 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageButton
-        android:id="@+id/btnPorton"
-        android:layout_width="50dp"
-        android:layout_height="150dp"
-        android:background="#DAE0E7"
-        android:contentDescription="@string/strporton"
-        android:scaleType="fitStart"
-        app:layout_constraintBottom_toTopOf="@+id/btnLuces"
-        app:layout_constraintEnd_toStartOf="@+id/btnBanda"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8"
-        app:srcCompat="@drawable/porton" />
-
-    <ImageButton
-        android:id="@+id/btnBanda"
-        android:layout_width="50dp"
-        android:layout_height="150dp"
-        android:background="#DAE0E7"
-        android:contentDescription="@string/strluces"
-        android:scaleType="fitStart"
-        app:layout_constraintBottom_toTopOf="@+id/btnTemperatura"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.814"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8"
-        app:srcCompat="@drawable/banda" />
-
-    <ImageButton
-        android:id="@+id/btnTemperatura"
-        android:layout_width="50dp"
-        android:layout_height="150dp"
-        android:background="#DAE0E7"
-        android:contentDescription="@string/strtemperatura"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/btnDesconectar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.814"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875"
-        app:srcCompat="@drawable/temperatura" />
-
-    <ImageButton
-        android:id="@+id/btnLuces"
-        android:layout_width="50dp"
-        android:layout_height="150dp"
-        android:background="#DAE0E7"
-        android:contentDescription="@string/strluces"
-        android:scaleType="fitStart"
-        app:layout_constraintBottom_toTopOf="@+id/btnDesconectar"
-        app:layout_constraintEnd_toStartOf="@+id/btnTemperatura"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875"
-        app:srcCompat="@drawable/luces" />
-
     <Button
         android:id="@+id/btnDesconectar"
         android:layout_width="0dp"
@@ -75,5 +15,212 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TabHost
+        android:id="@+id/tabPrincipal"
+        android:layout_width="412dp"
+        android:layout_height="633dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnDesconectar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="74dp" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnAbrir"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/strPAbrir" />
+
+                    <Button
+                        android:id="@+id/btnCerrar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/strPCerrar" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnBanda1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/strBanda1" />
+
+                    <Button
+                        android:id="@+id/btnBanda2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/strBanda2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/btnEncender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/strEncende" />
+
+                    <Button
+                        android:id="@+id/btnApagar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/strApagar" />
+
+                    <Button
+                        android:id="@+id/btnEncender1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/strEncender1" />
+
+                    <Button
+                        android:id="@+id/btnEncender2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/strEncender2" />
+
+                    <Button
+                        android:id="@+id/btnEntrada"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/strEntrada" />
+
+                    <Button
+                        android:id="@+id/btnSalida"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/strSalida" />
+
+                    <Button
+                        android:id="@+id/btnApagar1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/strApagar1" />
+
+                    <Button
+                        android:id="@+id/btnApagar2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/strApagar2" />
+
+                    <Button
+                        android:id="@+id/btnApagarEntrada"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/strApagarEntrada" />
+
+                    <Button
+                        android:id="@+id/btnApagarSalida"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/strApagarCamiones" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/btnRefrescar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/strRefrescar" />
+
+                    <ImageView
+                        android:id="@+id/imgTem"
+                        android:layout_width="match_parent"
+                        android:layout_height="190dp"
+                        android:contentDescription="@string/strTemperatura"
+                        android:paddingTop="50dp"
+                        app:srcCompat="@drawable/temperatura" />
+
+                    <TextView
+                        android:id="@+id/txtTemperatura"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="@string/strValTemp"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

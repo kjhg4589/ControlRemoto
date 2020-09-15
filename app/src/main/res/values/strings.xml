@@ -1,9 +1,27 @@
 <resources>
     <string name="app_name">ControlRemoto</string>
-    <string name="strporton">Porton</string>
-    <string name="strbanda">Banda</string>
-    <string name="strluces">Luces</string>
-    <string name="strtemperatura">Temperatura</string>
     <string name="strdesconectar">DESCONECTAR</string>
     <string name="strdispositivos">DISPOSITIVOS ENCONTRADOS</string>
+
+    <string name="strTemperatura">Temperatura</string>
+    <string name="strValTemp"></string>
+
+    <string name="strPAbrir">Abrir</string>
+    <string name="strPCerrar">Cerrar</string>
+
+    <string name="strBanda1">Encender Banda 1</string>
+    <string name="strBanda2">Encender Banda 2</string>
+
+    <string name="strEncende">Encender Todos</string>
+    <string name="strApagar">Apagar Todos</string>
+    <string name="strEncender1">Encender Laboratorio 1</string>
+    <string name="strEncender2">Encender Laboratorio 2</string>
+    <string name="strEntrada">Encender Entrada Empleados</string>
+    <string name="strSalida">Encender Salida de Camiones</string>
+    <string name="strApagar1">Apagar Laboratorio 1</string>
+    <string name="strApagar2">Apagar Laboratorio 2</string>
+    <string name="strApagarEntrada">Apagar Entrada Empleados</string>
+    <string name="strApagarCamiones">Apagar Salida de Camiones</string>
+
+    <string name="strRefrescar">Refrescar Temperatura</string>
 </resources>

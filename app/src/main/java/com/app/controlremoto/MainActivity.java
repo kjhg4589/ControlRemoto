@@ -11,6 +11,8 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TabHost;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -20,9 +22,15 @@ import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton btnPorton, btnLuces, btnBanda, btnTemperatura;
-    Button btnDesconectar;
 
+    Button btnDesconectar;
+    Button btnAbrir, btnCerrar;
+    Button btnBanda1, btnBanda2;
+    Button btnEncender, btnApagar;
+    Button btnEncender1, btnEncender2, btnEncenderEntrada, btnEncenderCamiones;
+    Button btnApagar1, btnApagar2, btnApagarEntrada, btnApagarCamiones;
+    Button btnRefrescar;
+    TextView txtTemperatura;
     //-------------------------------------------
     Handler bluetoothIn;
     final int handlerState = 0;
@@ -41,11 +49,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        TabHost tabHost = findViewById(R.id.tabPrincipal);
+        tabHost.setup();
+
+        //Porton
+        TabHost.TabSpec spec = tabHost.newTabSpec("Porton");
+        spec.setContent(R.id.tab1);
+        spec.setIndicator("Porton");
+        tabHost.addTab(spec);
+
+        //Banda
+        spec = tabHost.newTabSpec("Banda");
+        spec.setContent(R.id.tab2);
+        spec.setIndicator("Banda");
+        tabHost.addTab(spec);
+        //Luces
+        spec = tabHost.newTabSpec("Luces");
+        spec.setContent(R.id.tab3);
+        spec.setIndicator("Luces");
+        tabHost.addTab(spec);
+        //Temperatura
+        spec = tabHost.newTabSpec("Temperatura");
+        spec.setContent(R.id.tab4);
+        spec.setIndicator("Temperatura");
+        tabHost.addTab(spec);
+
         bluetoothIn = new Handler() {
             public void handleMessage(android.os.Message msg) {
                 if (msg.what == handlerState) {
 
                     //Interacción con los datos de ingreso
+                    txtTemperatura.setText("Hola Mundo");
                 }
             }
         };
@@ -53,37 +87,136 @@ public class MainActivity extends AppCompatActivity {
         btAdapter = BluetoothAdapter.getDefaultAdapter(); // get Bluetooth adapter
         VerificarEstadoBT();
 
-        btnBanda = findViewById(R.id.btnBanda);
-        btnLuces = findViewById(R.id.btnLuces);
-        btnPorton = findViewById(R.id.btnPorton);
-        btnTemperatura = findViewById(R.id.btnTemperatura);
+
         btnDesconectar = findViewById(R.id.btnDesconectar);
+        //Porton
+        btnAbrir = findViewById(R.id.btnAbrir);
+        btnCerrar = findViewById(R.id.btnCerrar);
+        //Banda
+        btnBanda1 = findViewById(R.id.btnBanda1);
+        btnBanda2 = findViewById(R.id.btnBanda2);
+        //Luces
+        btnEncender = findViewById(R.id.btnEncender);
+        btnApagar = findViewById(R.id.btnApagar);
+        btnEncender1 = findViewById(R.id.btnEncender1);
+        btnEncender2 = findViewById(R.id.btnEncender2);
+        btnEncenderEntrada = findViewById(R.id.btnEntrada);
+        btnEncenderCamiones = findViewById(R.id.btnSalida);
+        btnApagar1 = findViewById(R.id.btnApagar1);
+        btnApagar2 = findViewById(R.id.btnApagar2);
+        btnApagarEntrada = findViewById(R.id.btnApagarEntrada);
+        btnApagarCamiones = findViewById(R.id.btnApagarSalida);
+        //Refrescar
+        btnRefrescar = findViewById(R.id.btnRefrescar);
+        txtTemperatura = findViewById(R.id.txtTemperatura);
 
-        btnBanda.setOnClickListener(new View.OnClickListener() {
+
+        //Porton
+        btnAbrir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                MyConexionBT.write("0");
             }
         });
 
-        btnLuces.setOnClickListener(new View.OnClickListener() {
+        btnCerrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MyConexionBT.write("E");
+                MyConexionBT.write("1");
             }
         });
 
-        btnPorton.setOnClickListener(new View.OnClickListener() {
+        //Banda
+        btnBanda1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyConexionBT.write("2");
+            }
+        });
+
+        btnBanda2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyConexionBT.write("3");
+            }
+        });
+
+        //Luces
+        btnEncender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyConexionBT.write("4");
+            }
+        });
+
+        btnApagar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyConexionBT.write("5");
+            }
+        });
+
+        btnEncender1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyConexionBT.write("6");
+            }
+        });
+
+        btnEncender2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyConexionBT.write("7");
+            }
+        });
+
+        btnEncenderEntrada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyConexionBT.write("8");
+            }
+        });
+
+        btnEncenderCamiones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyConexionBT.write("9");
+            }
+        });
+
+        btnApagar1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MyConexionBT.write("A");
             }
         });
 
-        btnTemperatura.setOnClickListener(new View.OnClickListener() {
+        btnApagar2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MyConexionBT.write("B");
+            }
+        });
 
+        btnApagarEntrada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyConexionBT.write("C");
+            }
+        });
+
+        btnApagarCamiones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyConexionBT.write("D");
+            }
+        });
+
+        btnRefrescar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyConexionBT.write("E");
+                txtTemperatura.setText("hola mundo");
             }
         });
 
